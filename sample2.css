@@ -349,3 +349,241 @@ body{
         border-radius: 3px;
     }
 }
+
+
+
+/* استایل زیرمنوی کاربر */
+.user-container {
+    position: relative;
+}
+
+.user-submenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 280px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 15px;
+}
+
+/* فلش بالای زیرمنو */
+.user-submenu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 20px;
+    transform: rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-top: 1px solid #f0f0f0;
+    border-left: 1px solid #f0f0f0;
+}
+
+.user-login:hover .user-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* استایل حالت کاربر مهمان */
+.user-submenu-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.user-submenu-header i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.user-submenu-header span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.user-submenu-options {
+    padding: 15px;
+}
+
+.user-submenu-message {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.user-submenu-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn, .register-btn {
+    flex: 1;
+    display: block;
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #0771c7;
+    box-shadow: 0 3px 10px rgba(9, 132, 227, 0.2);
+}
+
+.register-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.register-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* استایل حالت کاربر وارد شده */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    margin-left: 10px;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.user-email {
+    font-size: 12px;
+    color: #666;
+}
+
+.user-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-menu-item {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.user-menu-item:last-child {
+    border-bottom: none;
+}
+
+.user-menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #444;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.user-menu-item a:hover {
+    background-color: rgba(9, 132, 227, 0.05);
+    color: var(--primary-color);
+}
+
+.user-menu-item i {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #666;
+    width: 20px;
+    text-align: center;
+}
+
+.user-menu-item:hover i {
+    color: var(--primary-color);
+}
+
+.user-menu-item.logout a {
+    color: #e74c3c;
+}
+
+.user-menu-item.logout i {
+    color: #e74c3c;
+}
+
+.user-menu-item.logout a:hover {
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+/* موبایل رسپانسیو */
+@media (max-width: 768px) {
+    .user-submenu {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        transform: translateY(100%);
+        margin-top: 0;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .user-submenu::before {
+        display: none;
+    }
+    
+    .user-login:hover .user-submenu {
+        transform: translateY(0);
+    }
+    
+    /* اضافه کردن دستگیره (handle) برای راحتی کاربر در موبایل */
+    .user-submenu-header::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 5px;
+        background-color: #e0e0e0;
+        border-radius: 3px;
+    }
+    
+    .user-avatar {
+        width: 35px;
+        height: 35px;
+    }
+}
