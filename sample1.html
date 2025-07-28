@@ -109,6 +109,62 @@
                 </div>
             </div>
         </div>
-      </div>
+         <div class="user position-relative" id="userDropdown">
+            <img src="./images/user.png" alt="">
+                <div class="user-menu">
+                    <div class="user-header">
+                        <div class="user-avatar">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <div class="user-name">حساب کاربری</div>
+                            <div class="user-subtitle">نام کاربر</div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="menu-item">
+                        <i class="fa fa-user-pen"></i>
+                        <span>ویرایش مشخصات فردی</span>
+                    </a>
+
+                    <div class="wallet-item">
+                        <div class="wallet-info">
+                            <i class="fa fa-wallet wallet-icon"></i>
+                            <span>کیف پول</span>
+                        </div>
+                        <span class="wallet-amount">۰ تومان</span>
+                    </div>
+
+                    <a href="#" class="menu-item">
+                        <i class="fa fa-heart"></i>
+                        <span>لیست علاقه‌مندی</span>
+                    </a>
+
+                    <a href="#" class="menu-item">
+                        <i class="fa fa-box"></i>
+                        <span>سفارش‌های من</span>
+                    </a>
+
+                    <a href="#" class="menu-item logout">
+                        <i class="fa fa-right-from-bracket"></i>
+                        <span>خروج از حساب کاربری</span>
+                    </a>
+                </div>
+        </div>
+</div>
+
+    <script src="./js/jquery.min.js"></script>
+      <script>
+         $('.user').on('mouseenter',function(){
+    $('.user-menu').addClass('active'); 
+  })
+
+   $('body').on('mouseover',function(e){
+    if(!e.target.closest('.user')){
+    $('.user-menu').removeClass('active');
+    // $('.cart-menu-container').removeClass('active');
+    }
+  })
+      </script>
 </body>
 </html>
