@@ -340,3 +340,163 @@
         height: 40px ;
     }
 }
+
+
+
+
+.user-menu {
+    position: absolute;
+    top: 100%;
+    left: -50px;
+    width: 320px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 107, 53, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+ .user-menu.active
+{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.user{
+    cursor: pointer;
+}
+
+
+
+.user-header {
+    display: flex;
+        background: linear-gradient(135deg, var(--primary-color), #502f2f) ;
+    color: #ffffff;
+    padding: 15px 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.user-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(255, 107, 53, 0.1) 100%);
+    pointer-events: none;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-left: 10px;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-name {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.user-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+}
+
+/* آیتم‌های منو */
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menu-item:hover {
+    background: rgba(255, 107, 53, 0.05);
+    color: var(--primary-color);
+}
+
+.menu-item i {
+    margin-left: 15px;
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.menu-item span {
+    font-size: 14px;
+}
+
+/* کیف پول */
+.wallet-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: rgba(255, 107, 53, 0.03);
+}
+
+.wallet-info {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.wallet-amount {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.wallet-icon {
+    margin-left: 15px;
+    color: var(--secondary-color);
+    font-size: 18px;
+}
+
+/* دکمه خروج */
+.logout {
+    color: #333;
+    border-bottom: none;
+    border-radius: 0 0 12px 12px;
+}
+
+.logout i {
+    color: #dc3545;
+}
+
+.logout:hover {
+    background: rgba(220, 53, 69, 0.05);
+}
+
+.logout:hover i {
+    color: #dc3545;
+}
+
+.logout:hover span {
+    color: #dc3545;
+}
